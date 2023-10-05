@@ -23,3 +23,21 @@ oc apply -k https://github.com/pittar-demos/demo-catalog/openshift-gitops-instan
 ```
 oc apply -k https://github.com/pittar-demos/demo-catalog/openshift-pipelines-operator/argocd
 ```
+
+5. Install and configure Tekton Chains:
+
+```
+oc apply -k https://github.com/pittar-demos/demo-catalog/tekton-chains/argocd
+```
+
+6. Install Advanced Cluster Security Operator:
+
+```
+oc apply -k https://github.com/pittar-demos/demo-catalog/advanced-cluster-security-operator/argocd
+```
+
+7. And then an ACS instance and Secured Cluster:
+
+```
+oc apply -k https://github.com/pittar-demos/demo-catalog/advanced-cluster-security-instances/argocd
+```
