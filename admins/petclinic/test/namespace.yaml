@@ -6,4 +6,4 @@ metadata:
     openshift.io/display-name: PetClinic DEV
   labels:
     argocd.argoproj.io/managed-by: gitops
-  name: petclinic-dev
+  name: petclinic-test
