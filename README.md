@@ -50,4 +50,6 @@ oc apply -k https://github.com/pittar-demos/demo-catalog/advanced-cluster-securi
 oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/argocd/dev
 
 oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/argocd/test
+
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/argocd/cicd
 ```
