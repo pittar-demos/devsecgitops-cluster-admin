@@ -1,0 +1,4 @@
+namespace: petclinic-dev
+
+resources:
+  - namespace.yaml
