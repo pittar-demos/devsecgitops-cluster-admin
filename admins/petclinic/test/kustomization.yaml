@@ -1,4 +1,4 @@
-namespace: petclinic-dev
+namespace: petclinic-test
 
 resources:
   - namespace.yaml
