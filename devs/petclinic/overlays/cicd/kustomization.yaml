@@ -6,6 +6,7 @@ namespace: petclinic-cicd
 # Nexus secret (username and password) and sonar host.
 resources:
   - ci-config-secret.yaml
+  - workspace-pvc.yaml
 
 # Generator options.
 generatorOptions:
