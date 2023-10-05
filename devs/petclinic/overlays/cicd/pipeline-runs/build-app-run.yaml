@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: build-app-
+spec:
+  pipelineRef:
+    name: build-app
+  serviceAccountName: pipeline
+  timeouts:
+    pipeline: 1h0m0s
+  taskRunTemplate: 
+    podTemplate:
+      envFrom:
+        - secretRef:
+            name: my-config-map
+  workspaces:
+    - name: source
+      persistentVolumeClaim:
+        claimName: workspace
+    - configMap:
+        name: maven-settings-cm
+      name: maven-settings
