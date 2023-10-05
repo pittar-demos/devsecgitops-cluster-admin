@@ -17,7 +17,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: admins/test
+    path: admins/petclinic/test
     repoURL: https://github.com/pittar-demos/devsecops-minimal.git
     targetRevision: main
   syncPolicy:

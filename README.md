@@ -41,3 +41,13 @@ oc apply -k https://github.com/pittar-demos/demo-catalog/advanced-cluster-securi
 ```
 oc apply -k https://github.com/pittar-demos/demo-catalog/advanced-cluster-security-instances/argocd
 ```
+
+## Applications!
+
+### Admins: Create Namespaces
+
+```
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/argocd/dev
+
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/argocd/test
+```
