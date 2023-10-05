@@ -53,3 +53,13 @@ oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/a
 
 oc apply -k https://github.com/pittar-demos/devsecops-minimal/admins/petclinic/argocd/cicd
 ```
+
+### Developers: Create Apps and Pipelines
+
+```
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/petclinic/argocd/dev
+
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/petclinic/argocd/test
+
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/petclinic/argocd/cicd
+```
