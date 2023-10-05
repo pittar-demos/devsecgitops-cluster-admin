@@ -1,0 +1,4 @@
+namespace: petclinic-cicd
+
+resources:
+  - namespace.yaml
