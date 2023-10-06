@@ -17,12 +17,12 @@ patches:
       kind: Deployment
       name: nexus
   - patch: |-
-    - op: add
-      path: /spec/tls
-      value:
-        termination: edge
-        insecureEdgeTerminationPolicy: Redirect
-        value: 'latest'
-      target:
-        kind: Deployment
-        name: sonarqube
+      - op: add
+        path: /spec/tls
+        value:
+          termination: edge
+          insecureEdgeTerminationPolicy: Redirect
+          value: 'latest'
+    target:
+      kind: Deployment
+      name: sonarqube
