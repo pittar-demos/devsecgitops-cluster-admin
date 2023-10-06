@@ -10,7 +10,7 @@ metadata:
   labels:
     gitops.ownedBy: gitops
     category: apps
-  name: petclinic-cicd
+  name: petclinic-cicd-apps
 spec:
   destination:
     namespace: petclinc-cicd
