@@ -1,0 +1,27 @@
+namespace: cicd-tools
+
+# Deploy pre-configured SonarQube and Nexus from Red Hat Canada demo catalog.
+resources:
+  - github.com/redhat-cop/gitops-catalog/nexus2/base
+  - github.com/redhat-cop/gitops-catalog/sonarqube8/overlays/plugins
+
+patches:
+  - patch: |-
+    - op: add
+      path: /spec/tls
+      value:
+        termination: edge
+        insecureEdgeTerminationPolicy: Redirect
+        value: 'latest'
+      target:
+        kind: Deployment
+        name: nexus
+    - op: add
+      path: /spec/tls
+      value:
+        termination: edge
+        insecureEdgeTerminationPolicy: Redirect
+        value: 'latest'
+      target:
+        kind: Deployment
+        name: sonarqube
