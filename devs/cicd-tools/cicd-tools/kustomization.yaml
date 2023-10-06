@@ -7,15 +7,16 @@ resources:
 
 patches:
   - patch: |-
-    - op: add
-      path: /spec/tls
-      value:
-        termination: edge
-        insecureEdgeTerminationPolicy: Redirect
-        value: 'latest'
-      target:
-        kind: Deployment
-        name: nexus
+      - op: add
+        path: /spec/tls
+        value:
+          termination: edge
+          insecureEdgeTerminationPolicy: Redirect
+          value: 'latest'
+    target:
+      kind: Deployment
+      name: nexus
+  - patch: |-
     - op: add
       path: /spec/tls
       value:
