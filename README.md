@@ -64,4 +64,6 @@ oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/petclinic/arg
 oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/petclinic/argocd/test
 
 oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/petclinic/argocd/cicd
+
+oc apply -k https://github.com/pittar-demos/devsecops-minimal/devs/cicd-tools/argocd
 ```
