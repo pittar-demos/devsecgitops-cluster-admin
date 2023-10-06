@@ -33,6 +33,37 @@ spec:
           workspace: source
         - name: maven-settings
           workspace: maven-settings
+    - name: buildah
+      params:
+        - name: IMAGE
+          value: 'quay.io/pittar/petclinic-demo:latest'
+        - name: STORAGE_DRIVER
+          value: vfs
+        - name: DOCKERFILE
+          value: ./Containerfile
+        - name: CONTEXT
+          value: .
+        - name: TLSVERIFY
+          value: 'true'
+        - name: FORMAT
+          value: oci
+        - name: BUILD_EXTRA_ARGS
+          value: ''
+        - name: PUSH_EXTRA_ARGS
+          value: ''
+        - name: SKIP_PUSH
+          value: 'false'
+      runAfter:
+        - maven
+      taskRef:
+        kind: ClusterTask
+        name: buildah
+      workspaces:
+        - name: source
+          workspace: source
+        - name: dockerconfig
+          workspace: quay-credentials
   workspaces:
     - name: source
     - name: maven-settings
+    - name: quay-credentials
