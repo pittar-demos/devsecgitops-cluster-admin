@@ -12,7 +12,17 @@ spec:
           valueFrom:
             secretKeyRef:
               name: ci-config-secret
-              key: MAVEN_SERVER_HOST  
+              key: MAVEN_SERVER_HOST
+        - name: MAVEN_SERVER_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: ci-config-secret
+              key: MAVEN_SERVER_USERNAME
+        - name: MAVEN_SERVER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ci-config-secret
+              key: MAVEN_SERVER_PASSWORD
   workspaces:
     - name: source
       persistentVolumeClaim:
@@ -23,3 +33,6 @@ spec:
     - name: quay-credentials
       secret:
         secretName: pittar-devsecops-pull-secret
+    - name: acs-central
+      secret:
+        secretName: roxsecrets

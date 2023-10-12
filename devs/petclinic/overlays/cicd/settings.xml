@@ -11,6 +11,11 @@
         <username>${env.MAVEN_SERVER_USERNAME}</username>
         <password>${env.MAVEN_SERVER_PASSWORD}</password>
       </server>
+      <server>
+         <id>github-petclinic</id>  
+         <username>${env.GIT_USERNAME}</username>  
+         <password>${env.GIT_PASSWORD}</password>  
+      </server>   
     </servers>
     <mirrors>
       <mirror>
