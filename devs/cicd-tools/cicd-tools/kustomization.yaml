@@ -13,7 +13,7 @@ patches:
           termination: edge
           insecureEdgeTerminationPolicy: Redirect
     target:
-      kind: Deployment
+      kind: Route
       name: nexus
   - patch: |-
       - op: add
@@ -22,5 +22,5 @@ patches:
           termination: edge
           insecureEdgeTerminationPolicy: Redirect
     target:
-      kind: Deployment
+      kind: Route
       name: sonarqube
