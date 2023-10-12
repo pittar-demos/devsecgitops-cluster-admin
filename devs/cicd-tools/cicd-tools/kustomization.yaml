@@ -12,7 +12,6 @@ patches:
         value:
           termination: edge
           insecureEdgeTerminationPolicy: Redirect
-          value: 'latest'
     target:
       kind: Deployment
       name: nexus
@@ -22,7 +21,6 @@ patches:
         value:
           termination: edge
           insecureEdgeTerminationPolicy: Redirect
-          value: 'latest'
     target:
       kind: Deployment
       name: sonarqube
