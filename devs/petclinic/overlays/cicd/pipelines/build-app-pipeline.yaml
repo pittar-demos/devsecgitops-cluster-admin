@@ -23,16 +23,19 @@ spec:
           workspace: source
     - name: maven
       params:
+        - name: MAVEN_IMAGE
+          value: 'quay.io/pittar/openjdk17-git:main'
         - name: GOALS
-          value:
-            - deploy
+          value: 'release:prepare release:perform'
+        - name: GIT_ENABLED
+          value: 'true'
         - name: CONTEXT_DIR
           value: .
       runAfter:
         - git-clone
       taskRef:
         kind: ClusterTask
-        name: maven
+        name: super-maven
       workspaces:
         - name: source
           workspace: source
@@ -41,8 +44,7 @@ spec:
     - name: maven-pom-version
       params:
         - name: MAVEN_IMAGE
-          value: >-
-            registry.redhat.io/ubi8/openjdk-17@sha256:7942acf43a41b8fd202de7c5f7745d9732fae00a401b3da06e1ac988ac26ba4d
+          value: 'quay.io/pittar/openjdk17-git:main'
         - name: VERSION_TYPE
           value: snapshot
         - name: MAVEN_MIRROR_URL
@@ -125,7 +127,8 @@ spec:
     - name: acs-image-scan
       params:
         - name: image
-          value: '$(params.image_dest_url):$(tasks.maven-pom-version.results.pom-version)'
+          value: >-
+            $(params.image_dest_url):$(tasks.maven-pom-version.results.pom-version)
         - name: output_format
           value: table
       runAfter:
@@ -139,7 +142,8 @@ spec:
     - name: acs-image-check
       params:
         - name: image
-          value: '$(params.image_dest_url):$(tasks.maven-pom-version.results.pom-version)'
+          value: >-
+            $(params.image_dest_url):$(tasks.maven-pom-version.results.pom-version)
       runAfter:
         - acs-image-scan
       taskRef:

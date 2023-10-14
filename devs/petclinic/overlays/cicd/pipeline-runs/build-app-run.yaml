@@ -23,6 +23,16 @@ spec:
             secretKeyRef:
               name: ci-config-secret
               key: MAVEN_SERVER_PASSWORD
+        - name: GIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: ci-config-secret
+              key: GIT_USERNAME
+        - name: GIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ci-config-secret
+              key: GIT_PASSWORD
   workspaces:
     - name: source
       persistentVolumeClaim:
