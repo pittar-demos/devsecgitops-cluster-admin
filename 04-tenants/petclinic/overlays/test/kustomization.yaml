@@ -1,0 +1,5 @@
+namespace: petclinic-test
+
+resources:
+  - namespace.yaml
+  - ../../base/rbac

@@ -1,0 +1,10 @@
+namespace: openshift-operators
+
+commonAnnotations:
+  argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  argocd.argoproj.io/sync-wave: "2"
+
+resources:
+  - github.com/pittar-demos/demo-catalog/openshift-pipelines-tasks/clustertasks?ref=main
+  - gitea-pr-clustertask.yaml
+  - kustomize-clustertask.yaml

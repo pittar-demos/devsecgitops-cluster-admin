@@ -1,0 +1,6 @@
+namespace: petclinic-dev
+
+resources:
+  - namespace.yaml
+  - servicemonitor.yaml
+  - ../../base/rbac

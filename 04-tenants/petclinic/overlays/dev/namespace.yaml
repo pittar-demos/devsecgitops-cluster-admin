@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: Petclinic DEV
+    openshift.io/display-name: Petclinic DEV
+  labels:
+    argocd.argoproj.io/managed-by: gitops
+  name: petclinic-dev

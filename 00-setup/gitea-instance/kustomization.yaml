@@ -1,0 +1,7 @@
+namespace: scm
+
+resources:
+  - namespace.yaml
+  - gitea.yaml
+  # - gitea-bootstrap-cm.yaml
+  # - gitea-bootstrap-job.yaml

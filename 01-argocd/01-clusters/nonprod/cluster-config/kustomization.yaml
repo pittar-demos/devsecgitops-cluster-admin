@@ -1,0 +1,5 @@
+resources:
+  - cluster-config-project.yaml
+  - ../../../02-cluster-config/openshift-gitops
+  - ../../../02-cluster-config/groups-and-membership
+

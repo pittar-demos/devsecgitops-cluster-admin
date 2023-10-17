@@ -12,6 +12,23 @@ oc apply -k https://github.com/pittar-demos/demo-catalog/openshift-gitops-operat
 oc apply -k https://github.com/pittar-demos/demo-catalog/openshift-gitops-instances/argocd/openshift-gitops
 ```
 
+3. Deploy Gitea opeartor:
+
+```
+oc apply -k https://github.com/pittar-demos/demo-catalog/gitea/operator
+```
+
+4. Deploy an instance of Gitea:
+
+```
+oc apply -k https://github.com/pittar-demos/devsecgitops-cluster-admin/00-setup/gitea-instance
+```
+
+This might take a few minutes.  Wait until you can login to Gitea as `developer/openshift` and that you see the three repos (cluster-admin, petclinic-gitops, petclinic) before continuing.
+
+
+
+
 3. Deploy another instance of OpenShift GitOps for Developers to use:
 
 ```

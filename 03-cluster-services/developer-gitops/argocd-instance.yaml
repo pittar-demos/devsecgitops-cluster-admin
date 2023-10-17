@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  name: argocd
+spec:
+  applicationInstanceLabelKey: argocd.argoproj.io/instance
+  server:
+    insecure: true
+    route:
+      enabled: true
+      tls:
+        termination: edge
+        insecureEdgeTerminationPolicy: Redirect
+  sso:
+    dex:
+      openShiftOAuth: true
+    provider: dex
+  rbac:
+    defaultPolicy: role:admin
+    policy: |
+      g, openshift-gitops-admins, role:admin
+    scopes: "[groups]"
