@@ -1,4 +1,4 @@
 namespace: openshift-gitops
 
 resources:
-  - argocd-application.yaml
+  - developer-gitops-application.yaml
