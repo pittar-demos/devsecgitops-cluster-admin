@@ -1,6 +1,5 @@
 resources:
   - tenants-project.yaml
-  - ../../../04-tenants/developer-gitops
   - ../../../04-tenants/petclinic/cicd
   - ../../../04-tenants/petclinic/dev
   - ../../../04-tenants/petclinic/test
