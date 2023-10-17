@@ -13,7 +13,7 @@ spec:
   project: cluster-services
   source:
     path: 03-cluster-services/openshift-pipelines
-    repoURL: https://github.com/pittar-demos/managed-openshift-devsecops.git
+    repoURL: http://gitea.scm.svc.cluster.local:3000/developer/cluster-admin.git
     targetRevision: main
   syncPolicy:
     automated:

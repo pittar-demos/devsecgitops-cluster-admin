@@ -8,8 +8,8 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-bootstrap
   source:
-    path: 01-cluster-admin/01-argocd/01-clusters/nonprod
-    repoURL: http://gitea.scm.svc.cluster.local:3000/cluster-admin.git
+    path: 01-argocd/01-clusters/nonprod
+    repoURL: http://gitea.scm.svc.cluster.local:3000/developer/cluster-admin.git
     targetRevision: main
   syncPolicy:
     automated:

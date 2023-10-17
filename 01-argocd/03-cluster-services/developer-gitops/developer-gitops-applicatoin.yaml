@@ -13,7 +13,7 @@ spec:
   project: tenants
   source:
     path: 03-cluster-services/developer-gitops
-    repoURL: http://gitea.scm.svc.cluster.local:3000/cluster-admin.git
+    repoURL: http://gitea.scm.svc.cluster.local:3000/developer/cluster-admin.git
     targetRevision: main
   syncPolicy:
     automated:
