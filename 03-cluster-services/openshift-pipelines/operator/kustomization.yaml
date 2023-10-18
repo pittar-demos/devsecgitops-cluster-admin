@@ -6,5 +6,5 @@ commonAnnotations:
 
 resources:
   # OpenShift Pipelines and Tekton Chains
-  - github.com/pittar-demos/demo-catalog/openshift-pipelines-operator/argocd?ref=main
-  - github.com/pittar-demos/demo-catalog/tekton-chains/argocd?ref=main
+  - github.com/pittar-demos/demo-catalog/openshift-pipelines-operator/overlays/pipelines-1.12?ref=main
+  - github.com/pittar-demos/demo-catalog/tekton-chains/overlays/cosign?ref=main
