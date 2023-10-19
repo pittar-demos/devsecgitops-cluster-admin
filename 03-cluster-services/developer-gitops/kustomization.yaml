@@ -3,5 +3,6 @@ namespace: gitops
 resources:
   - namespace.yaml
   - argocd-instance.yaml
+  - petclinic-project.yaml
   # - developer-gitops-argocd-extended-clusterrole.yaml
   # - developer-gitops-argocd-extended-clusterrolebinding.yaml
