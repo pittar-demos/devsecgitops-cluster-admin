@@ -7,20 +7,39 @@ metadata:
   name: kustomize
 spec:
   params:
-    - name: imagestream
+    - description: The placeholder image in the deployment to be replaced.
+      name: image-name
       type: string
-      description: The image to update the deployment with
-    - name: overlaypath
+    - description: The image to update the deployment with.
+      name: new-image-name
       type: string
-      description: path to the overlay directory
+    - description: The image to tag update the deployment with.
+      name: new-tag
+      type: string
+    - description: Path to the overlay directory.
+      name: overlaypath
+      type: string
   steps:
-    - name: kustomzie
-      workingDir: $(workspaces.source.path)
-      image: quay.io/redhatworkshops/kustomize-task:v4.0.5
-      script: |
+    - image: 'quay.io/redhatworkshops/kustomize-task:v4.0.5'
+      name: kustomize
+      resources: {}
+      script: >
         #!/usr/bin/env /bin/sh
-        echo "Running: kustomize edit set image $(params.imagestream)"
+
+        echo "Kustomizing image"
+
+        echo "Running: kustomize edit set image
+        $(params.image-name)=$(params.new-image-name):$(params.new-tag)"
+
         cd $(params.overlaypath)
-        kustomize edit set image $(params.imagestream)
+
+        kustomize edit set image
+        $(params.image-name)=$(params.new-image-name):$(params.new-tag)
+
+
+        echo "Updated file kustomization.yaml file"
+
+        cat kustomization.yaml
+      workingDir: $(workspaces.source.path)
   workspaces:
     - name: source

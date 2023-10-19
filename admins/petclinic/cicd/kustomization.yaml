@@ -2,3 +2,4 @@ namespace: petclinic-cicd
 
 resources:
   - namespace.yaml
+  - pipeline-sa.yaml
