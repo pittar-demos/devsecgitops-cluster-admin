@@ -1,7 +1,6 @@
-namespace: openshift-gitops
-
 resources:
   # Advanced Cluster Security Operator and Instance
+  - namespace.yaml
   - github.com/pittar-demos/demo-catalog/advanced-cluster-security-operator/argocd?ref=main
   - github.com/pittar-demos/demo-catalog/advanced-cluster-security-instances/argocd?ref=main
-  #- ../../../03-cluster-services/rhacs-secrets-generation
+  #- acs-secrets

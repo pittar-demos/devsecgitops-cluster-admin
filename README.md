@@ -26,7 +26,27 @@ oc apply -k https://github.com/pittar-demos/devsecgitops-cluster-admin/00-setup/
 
 This might take a few minutes.  Wait until you can login to Gitea as `developer/openshift` and that you see the three repos (cluster-admin, petclinic-gitops, petclinic) before continuing.
 
+5. Bootstrap the demo.
 
+```
+oc apply -k https://github.com/pittar-demos/devsecgitops-cluster-admin/01-argocd/01-clusters/nonprod
+```
+
+Once everything has successfully deployed:
+
+6. Create some secrets:
+
+```
+# Quay credentials
+oc apply -f ignore/quay-creds.yaml
+
+# Generate ACS secret
+oc apply -f 03-cluster-services/advanced-cluster-security/acs-secrets
+```
+
+
+
+# END
 
 
 3. Deploy another instance of OpenShift GitOps for Developers to use:

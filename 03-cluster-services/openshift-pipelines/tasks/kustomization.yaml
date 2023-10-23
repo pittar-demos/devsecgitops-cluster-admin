@@ -8,3 +8,4 @@ resources:
   - github.com/pittar-demos/demo-catalog/openshift-pipelines-tasks/clustertasks?ref=main
   - gitea-pr-clustertask.yaml
   - kustomize-clustertask.yaml
+  - generate-ids-clustertask.yaml

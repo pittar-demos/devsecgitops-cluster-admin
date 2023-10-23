@@ -8,5 +8,7 @@ metadata:
   name: pipeline
   namespace: petclinic-cicd
 secrets:
-- name: gitea-creds
-- name: quay-creds
+  - name: gitea-creds
+  - name: quay-creds
+imagePullSecrets:
+  - name: quay-creds
