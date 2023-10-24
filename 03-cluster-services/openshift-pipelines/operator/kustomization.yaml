@@ -2,9 +2,8 @@ namespace: openshift-operators
 
 commonAnnotations:
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-  argocd.argoproj.io/sync-wave: "1"
 
 resources:
   # OpenShift Pipelines and Tekton Chains
   - github.com/pittar-demos/demo-catalog/openshift-pipelines-operator/overlays/pipelines-1.12?ref=main
-  - github.com/pittar-demos/demo-catalog/tekton-chains/overlays/cosign?ref=main
+  #- github.com/pittar-demos/demo-catalog/tekton-chains/overlays/cosign?ref=main

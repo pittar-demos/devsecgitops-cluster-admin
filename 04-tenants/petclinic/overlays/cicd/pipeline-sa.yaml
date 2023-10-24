@@ -4,3 +4,6 @@ metadata:
   name: pipeline
 secrets:
   - name: gitea-creds
+  - name: quay-creds
+imagePullSecrets:
+  - name: quay-creds

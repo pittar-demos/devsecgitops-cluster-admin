@@ -19,6 +19,14 @@ spec:
     dex:
       openShiftOAuth: true
     provider: dex
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      clusters:
+      - '*'
+      kinds:
+      - TaskRun
+      - PipelineRun
   rbac:
     defaultPolicy: role:admin
     policy: |
