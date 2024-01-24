@@ -2,7 +2,7 @@ namespace: cicd-tools
 
 resources:
   - namespace.yaml
-  - github.com/redhat-cop/gitops-catalog/nexus2/base?ref=main
+  - pittar-demos/demo-catalog/nexus3/base?ref=main
   - github.com/redhat-cop/gitops-catalog/sonarqube8/base?ref=main
   - sonarqube-admin-secret.yaml
   - configure-sonarqube-job.yaml
