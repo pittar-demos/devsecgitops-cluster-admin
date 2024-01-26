@@ -8,7 +8,7 @@ metadata:
   name: advanced-cluster-security
 spec:
   destination:
-    namespace: openshift-operators
+    namespace: rhacs-operator
     server: https://kubernetes.default.svc
   project: cluster-services
   source:
