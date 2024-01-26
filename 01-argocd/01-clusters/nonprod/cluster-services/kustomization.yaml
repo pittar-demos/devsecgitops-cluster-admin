@@ -3,4 +3,4 @@ resources:
   - ../../../03-cluster-services/developer-gitops
   - ../../../03-cluster-services/openshift-pipelines
   - ../../../03-cluster-services/common-cicd-tools
-  - ../../../03-cluster-services/advanced-cluster-security
+  - ../../03-cluster-services/advanced-cluster-security
