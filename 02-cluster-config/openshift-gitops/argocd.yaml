@@ -1,11 +1,14 @@
-apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1beta1
 kind: ArgoCD
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: ServerSideApply=true
   name: openshift-gitops
 spec:
+  extraConfig:
+    accounts.rhdh: apiKey, login
   applicationInstanceLabelKey: argocd.argoproj.io/instance
   server:
     insecure: true
@@ -14,12 +17,9 @@ spec:
       tls:
         termination: edge
         insecureEdgeTerminationPolicy: Redirect
-  sso:
-    dex:
-      openShiftOAuth: true
-    provider: dex
   rbac:
-    defaultPolicy: role:admin
+    defaultPolicy: role:readonly
     policy: |
       g, openshift-gitops-admins, role:admin
+      g, system:cluster-admins, role:admin
     scopes: "[groups]"
